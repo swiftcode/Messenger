@@ -17,11 +17,16 @@ class MessengerViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
     }
     
     private func setScreenAttributes() {
+        //Set the appearance of the buttons
         menuButton.tintColor = .white
         addButton.tintColor = .white
+        
+        //Set the title text
+        self.title = Screen.messagesTitle
     }
     
     
