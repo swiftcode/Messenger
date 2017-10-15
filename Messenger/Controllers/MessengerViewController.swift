@@ -10,10 +10,25 @@ import UIKit
 
 class MessengerViewController: UIViewController {
 
+    //MARK: - IBOutlets
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+    
+    //MARK: - IBActions
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
+    private func setScreenAttributes() {
+        menuButton.tintColor = .white
+        addButton.tintColor = .white
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        setScreenAttributes()
     }
 
     

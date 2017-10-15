@@ -22,7 +22,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mZw-f5-g9r"/>
+                    <navigationItem key="navigationItem" id="mZw-f5-g9r">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="VyT-oV-JrB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yb7-My-WDt">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="b9n-St-2fc" id="HDB-u7-M42"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="yb7-My-WDt" id="uEV-E0-bmf"/>
+                        <outlet property="menuButton" destination="VyT-oV-JrB" id="FBc-tX-7hW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gda-4P-sfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
