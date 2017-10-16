@@ -67,8 +67,7 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messengerCell") as! MessengerTableViewCell
         cell.senderName.text = "Joe Smith"
         cell.subject.text = "What's new?"
-        cell.datePosted.text = String(describing: Date())
-        
+        cell.datePosted.text = Date().microDate + " " + Date().shortTime
         return cell
     }
     
