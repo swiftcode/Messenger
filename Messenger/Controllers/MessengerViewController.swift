@@ -30,6 +30,9 @@ class MessengerViewController: UIViewController {
         
         //Set the controllerView properties
         controllerView.backgroundColor = AppColor.green
+        
+        //Do not have a blank space at top of screen
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     
@@ -38,22 +41,10 @@ class MessengerViewController: UIViewController {
         
         setScreenAttributes()
     }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -70,7 +61,6 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         cell.datePosted.text = Date().microDate + " " + Date().shortTime
         return cell
     }
-    
 }
 
 

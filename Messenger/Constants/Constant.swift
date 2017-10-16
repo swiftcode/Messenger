@@ -9,7 +9,7 @@
 import UIKit
 
 struct AppColor {
-    static let green = UIColor(red: 0/255, green: 157/255, blue: 159/255, alpha: 1)
+    static let green = UIColor(red: 0/255, green: 155/255, blue: 155/255, alpha: 1)
 }
 
 struct Screen {
