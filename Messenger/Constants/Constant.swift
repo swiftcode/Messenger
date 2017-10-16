@@ -14,4 +14,6 @@ struct AppColor {
 
 struct Screen {
     static let messagesTitle = "Messages"
+    static let moreTitle = "More"
+    static let settingsTitle = "Settings"
 }
