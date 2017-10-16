@@ -15,6 +15,7 @@
 		E56776B91F93DB3500ECDAA9 /* Messenger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56776B81F93DB3500ECDAA9 /* Messenger.storyboard */; };
 		E56776BC1F93DBE800ECDAA9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776BB1F93DBE800ECDAA9 /* Constant.swift */; };
 		E56776BE1F93DCEF00ECDAA9 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776BD1F93DCEF00ECDAA9 /* MessengerViewController.swift */; };
+		E56776C01F94149A00ECDAA9 /* MessengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E56776B81F93DB3500ECDAA9 /* Messenger.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Messenger.storyboard; path = Views/Messenger.storyboard; sourceTree = "<group>"; };
 		E56776BB1F93DBE800ECDAA9 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Constants/Constant.swift; sourceTree = "<group>"; };
 		E56776BD1F93DCEF00ECDAA9 /* MessengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessengerViewController.swift; path = Controllers/MessengerViewController.swift; sourceTree = "<group>"; };
+		E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessengerTableViewCell.swift; path = Controllers/MessengerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				E56776BD1F93DCEF00ECDAA9 /* MessengerViewController.swift */,
+				E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				E56776BE1F93DCEF00ECDAA9 /* MessengerViewController.swift in Sources */,
 				E56776871F93D83B00ECDAA9 /* AppDelegate.swift in Sources */,
 				E56776BC1F93DBE800ECDAA9 /* Constant.swift in Sources */,
+				E56776C01F94149A00ECDAA9 /* MessengerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

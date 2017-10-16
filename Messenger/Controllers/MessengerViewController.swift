@@ -13,7 +13,7 @@ class MessengerViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
-    
+    @IBOutlet weak var controllerView: UIView!
     
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -27,6 +27,9 @@ class MessengerViewController: UIViewController {
         
         //Set the title text
         self.title = Screen.messagesTitle
+        
+        //Set the controllerView properties
+        controllerView.backgroundColor = AppColor.green
     }
     
     
@@ -61,8 +64,12 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messengerCell") as! MessengerTableViewCell
+        cell.senderName.text = "Joe Smith"
+        cell.subject.text = "What's new?"
+        cell.datePosted.text = String(describing: Date())
         
-        return UITableViewCell()
+        return cell
     }
     
 }
