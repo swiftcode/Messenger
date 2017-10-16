@@ -45,6 +45,27 @@ class MessengerViewController: UIViewController {
 
 extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            
+        }
+        
+        let reply =  UITableViewRowAction(style: .normal, title: "Reply") { (action, indexPath) in
+            
+        }
+        
+        let share = UITableViewRowAction(style: .normal, title: "Share") { (action, indexPath) in
+ 
+        }
+        
+        share.backgroundColor = UIColor.blue
+        reply.backgroundColor = AppColor.green
+        
+        return [reply, share, delete]
+    }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
