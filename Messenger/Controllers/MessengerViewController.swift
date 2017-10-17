@@ -45,6 +45,7 @@ class MessengerViewController: UIViewController {
 
 extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     
+    //MARK: - Editing actions
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
@@ -67,6 +68,7 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     
+    //MARK: - Tableview delegates
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
