@@ -48,14 +48,15 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            
+            showAlert("Delete", message: "Delete button pressed", viewController: self)
         }
         
         let reply =  UITableViewRowAction(style: .normal, title: "Reply") { (action, indexPath) in
-            
+            showAlert("Reply", message: "Reply button pressed", viewController: self)
         }
         
         let share = UITableViewRowAction(style: .normal, title: "Share") { (action, indexPath) in
+            showAlert("Share", message: "Share button pressed", viewController: self)
  
         }
         

@@ -17,6 +17,7 @@
 		E56776BE1F93DCEF00ECDAA9 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776BD1F93DCEF00ECDAA9 /* MessengerViewController.swift */; };
 		E56776C01F94149A00ECDAA9 /* MessengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */; };
 		E56776C31F94663F00ECDAA9 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776C21F94663F00ECDAA9 /* DateExtensions.swift */; };
+		E5D1650B1F95B9B1001721DF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1650A1F95B9B1001721DF /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E56776BD1F93DCEF00ECDAA9 /* MessengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessengerViewController.swift; path = Controllers/MessengerViewController.swift; sourceTree = "<group>"; };
 		E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessengerTableViewCell.swift; path = Controllers/MessengerTableViewCell.swift; sourceTree = "<group>"; };
 		E56776C21F94663F00ECDAA9 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Extensions/DateExtensions.swift; sourceTree = "<group>"; };
+		E5D1650A1F95B9B1001721DF /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Utils/Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		E56776851F93D83B00ECDAA9 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				E5D165091F959E2E001721DF /* Utils */,
 				E56776C11F94661E00ECDAA9 /* Extensions */,
 				E56776BA1F93DBCA00ECDAA9 /* Constants */,
 				E56776B51F93DAE100ECDAA9 /* Models */,
@@ -181,6 +184,14 @@
 				E56776C21F94663F00ECDAA9 /* DateExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E5D165091F959E2E001721DF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E5D1650A1F95B9B1001721DF /* Alert.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D1650B1F95B9B1001721DF /* Alert.swift in Sources */,
 				E56776BE1F93DCEF00ECDAA9 /* MessengerViewController.swift in Sources */,
 				E56776C31F94663F00ECDAA9 /* DateExtensions.swift in Sources */,
 				E56776871F93D83B00ECDAA9 /* AppDelegate.swift in Sources */,
@@ -567,6 +579,7 @@
 				E56776AD1F93D83B00ECDAA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E56776AE1F93D83B00ECDAA9 /* Build configuration list for PBXNativeTarget "MessengerTests" */ = {
 			isa = XCConfigurationList;
@@ -575,6 +588,7 @@
 				E56776B01F93D83B00ECDAA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E56776B11F93D83B00ECDAA9 /* Build configuration list for PBXNativeTarget "MessengerUITests" */ = {
 			isa = XCConfigurationList;
@@ -583,6 +597,7 @@
 				E56776B31F93D83B00ECDAA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
