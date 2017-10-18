@@ -80,7 +80,23 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-
+            
+            //Display an alert controller to make sure the user wants to logout
+            let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this post?", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (alert: UIAlertAction!) -> Void in
+                
+                self.posts.remove(at: indexPath.row)
+                tableView.reloadData()
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (alert: UIAlertAction!) -> Void in
+                return
+            }
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true, completion: nil)
         }
         
         let reply =  UITableViewRowAction(style: .normal, title: "Reply") { (action, indexPath) in
