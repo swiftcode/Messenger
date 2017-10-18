@@ -8,11 +8,14 @@
 
 import Foundation
 
+typealias ID = String
+
 struct Post {
-    var id: String
+    var id: ID
     var topic: String
     var message: String
     var email: String
+    var replyTo: ID?
     
     init(id: String = "",
          topic: String = "",

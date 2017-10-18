@@ -91,7 +91,7 @@
                         <outlet property="addButton" destination="yb7-My-WDt" id="uEV-E0-bmf"/>
                         <outlet property="controllerView" destination="9BW-Wn-Pa1" id="DFg-Cb-RE9"/>
                         <outlet property="menuButton" destination="VyT-oV-JrB" id="FBc-tX-7hW"/>
-                        <segue destination="UDW-tc-u5p" kind="show" identifier="ReplyIdentifier" action="showDetailViewController:sender:" id="lYB-Iu-qUO"/>
+                        <segue destination="UDW-tc-u5p" kind="show" identifier="ReplyIdentifier" id="pUe-85-BGP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gda-4P-sfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,12 +109,28 @@
                     <view key="view" contentMode="scaleToFill" id="oLc-0l-1vA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92x-08-MhN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="5Qe-nA-twz"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83970565029999999" green="0.83970565029999999" blue="0.83970565029999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="oq9-1J-qnu" kind="unwind" unwindAction="unwindSegueWithSegue:" id="aKT-ZA-Wf1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2m-5E-v0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oq9-1J-qnu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1953" y="151"/>
         </scene>

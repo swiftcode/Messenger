@@ -15,13 +15,14 @@ class MessengerViewController: UIViewController {
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var controllerView: UIView!
     
-    
     var posts = [Post]()
     
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
     }
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {}
     
     private func setScreenAttributes() {
         //Set the appearance of the buttons
@@ -79,11 +80,14 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            showAlert("Delete", message: "Delete button pressed", viewController: self)
+
         }
         
         let reply =  UITableViewRowAction(style: .normal, title: "Reply") { (action, indexPath) in
-            self.performSegue(withIdentifier: "ReplyIdentifier", sender: nil)
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "ReplyIdentifier", sender: nil)
+            }
         }
         
         reply.backgroundColor = AppColor.green
