@@ -20,6 +20,7 @@
 		E56776C01F94149A00ECDAA9 /* MessengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */; };
 		E56776C31F94663F00ECDAA9 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776C21F94663F00ECDAA9 /* DateExtensions.swift */; };
 		E5D1650B1F95B9B1001721DF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1650A1F95B9B1001721DF /* Alert.swift */; };
+		E5E7ED8F1F97050500A77F96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7ED8E1F97050500A77F96 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessengerTableViewCell.swift; path = Controllers/MessengerTableViewCell.swift; sourceTree = "<group>"; };
 		E56776C21F94663F00ECDAA9 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Extensions/DateExtensions.swift; sourceTree = "<group>"; };
 		E5D1650A1F95B9B1001721DF /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Utils/Alert.swift; sourceTree = "<group>"; };
+		E5E7ED8E1F97050500A77F96 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Extensions/StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				E56776C21F94663F00ECDAA9 /* DateExtensions.swift */,
+				E5E7ED8E1F97050500A77F96 /* StringExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				E5D1650B1F95B9B1001721DF /* Alert.swift in Sources */,
 				E56776BE1F93DCEF00ECDAA9 /* MessengerViewController.swift in Sources */,
 				E56776C31F94663F00ECDAA9 /* DateExtensions.swift in Sources */,
+				E5E7ED8F1F97050500A77F96 /* StringExtensions.swift in Sources */,
 				E56776871F93D83B00ECDAA9 /* AppDelegate.swift in Sources */,
 				E523E3BF1F97001500C3D9C5 /* User.swift in Sources */,
 				E56776BC1F93DBE800ECDAA9 /* Constant.swift in Sources */,
