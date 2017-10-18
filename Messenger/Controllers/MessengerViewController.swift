@@ -83,7 +83,7 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let reply =  UITableViewRowAction(style: .normal, title: "Reply") { (action, indexPath) in
-            showAlert("Reply", message: "Reply button pressed", viewController: self)
+            self.performSegue(withIdentifier: "ReplyIdentifier", sender: nil)
         }
         
         reply.backgroundColor = AppColor.green

@@ -21,6 +21,7 @@
 		E56776C31F94663F00ECDAA9 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776C21F94663F00ECDAA9 /* DateExtensions.swift */; };
 		E5D1650B1F95B9B1001721DF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1650A1F95B9B1001721DF /* Alert.swift */; };
 		E5E7ED8F1F97050500A77F96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7ED8E1F97050500A77F96 /* StringExtensions.swift */; };
+		E5E7ED911F97151A00A77F96 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7ED901F97151A00A77F96 /* ReplyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E56776C21F94663F00ECDAA9 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Extensions/DateExtensions.swift; sourceTree = "<group>"; };
 		E5D1650A1F95B9B1001721DF /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Utils/Alert.swift; sourceTree = "<group>"; };
 		E5E7ED8E1F97050500A77F96 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Extensions/StringExtensions.swift; sourceTree = "<group>"; };
+		E5E7ED901F97151A00A77F96 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyViewController.swift; path = Controllers/ReplyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			children = (
 				E56776BD1F93DCEF00ECDAA9 /* MessengerViewController.swift */,
 				E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */,
+				E5E7ED901F97151A00A77F96 /* ReplyViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D1650B1F95B9B1001721DF /* Alert.swift in Sources */,
+				E5E7ED911F97151A00A77F96 /* ReplyViewController.swift in Sources */,
 				E56776BE1F93DCEF00ECDAA9 /* MessengerViewController.swift in Sources */,
 				E56776C31F94663F00ECDAA9 /* DateExtensions.swift in Sources */,
 				E5E7ED8F1F97050500A77F96 /* StringExtensions.swift in Sources */,
