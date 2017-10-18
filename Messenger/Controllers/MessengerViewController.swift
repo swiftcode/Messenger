@@ -15,6 +15,9 @@ class MessengerViewController: UIViewController {
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var controllerView: UIView!
     
+    
+    var posts = [Post]()
+    
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -36,10 +39,37 @@ class MessengerViewController: UIViewController {
     }
     
     
+    private func createPosts() {
+        var id = String.idCode()
+        var topic = "5K run this weekend"
+        var message = "There is a 5K run this weekend at Brookstone Park"
+        var email = "jsmith@nowhere.com"
+        
+        var post = Post(id: id, topic: topic, message: message, email: email)
+        posts.append(post)
+        
+        id = String.idCode()
+        topic = "Snow predicted"
+        message = "A snow storm is predicted for parts of the east coast"
+        email = "newscaster@news.com"
+        post = Post(id: id, topic: topic, message: message, email: email)
+        posts.append(post)
+        
+        id = String.idCode()
+        topic = "5K run this weekend"
+        message = "Sounds great.  I'll be there."
+        email = "runningman@running.com"
+        post = Post(id: id, topic: topic, message: message, email: email)
+        posts.append(post)
+        
+        posts.sort { ($0.topic) < ($1.topic) }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setScreenAttributes()
+        createPosts()
     }
 }
 
@@ -56,15 +86,9 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
             showAlert("Reply", message: "Reply button pressed", viewController: self)
         }
         
-        let share = UITableViewRowAction(style: .normal, title: "Share") { (action, indexPath) in
-            showAlert("Share", message: "Share button pressed", viewController: self)
- 
-        }
-        
-        share.backgroundColor = UIColor.blue
         reply.backgroundColor = AppColor.green
         
-        return [reply, share, delete]
+        return [reply, delete]
     }
     
     
@@ -74,15 +98,21 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     }
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "messengerCell") as! MessengerTableViewCell
-        cell.senderName.text = "Joe Smith"
-        cell.subject.text = "What's new?"
+        
+        let row = indexPath.row
+        
+        print("\(posts[row].id) \(posts[row].email) \(posts[row].topic)")
+        
+        cell.senderName.text = posts[row].email
+        cell.subject.text =  posts[row].topic
         cell.datePosted.text = Date().microDate + " " + Date().shortTime
+
         return cell
     }
 }
