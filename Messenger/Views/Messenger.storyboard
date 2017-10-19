@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -84,7 +85,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yb7-My-WDt">
                             <connections>
                                 <action selector="addButtonPressed:" destination="b9n-St-2fc" id="HDB-u7-M42"/>
-                                <segue destination="UDW-tc-u5p" kind="show" identifier="NewMessageIdentifier" id="PUK-M8-ytJ"/>
+                                <segue destination="UDW-tc-u5p" kind="show" identifier="NewMessageIdentifier" animates="NO" id="PUK-M8-ytJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -121,20 +122,41 @@
                                     <navigationItem title="Title" id="5Qe-nA-twz"/>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Current Message" translatesAutoresizingMaskIntoConstraints="NO" id="0Fr-0V-hhT">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Current Message" translatesAutoresizingMaskIntoConstraints="NO" id="0Fr-0V-hhT">
                                 <rect key="frame" x="16" y="114" width="343" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="I37-Cg-Pke"/>
+                                    <constraint firstAttribute="height" constant="75" id="U2T-K8-OCb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replying to: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWk-8Q-xfM">
+                                <rect key="frame" x="31" y="94" width="124" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Xl3-Tj-TvL"/>
+                                    <constraint firstAttribute="width" constant="124" id="ht7-mo-Q5J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.83970565029999999" green="0.83970565029999999" blue="0.83970565029999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Fr-0V-hhT" firstAttribute="leading" secondItem="oLc-0l-1vA" secondAttribute="leadingMargin" id="NbR-e5-Jy4"/>
+                            <constraint firstItem="0Fr-0V-hhT" firstAttribute="top" secondItem="tWk-8Q-xfM" secondAttribute="bottom" constant="-1" id="cXK-CG-Le7"/>
+                            <constraint firstItem="tWk-8Q-xfM" firstAttribute="top" secondItem="WY8-0p-Ocd" secondAttribute="bottom" constant="30" id="eg4-Lf-kcZ"/>
+                            <constraint firstItem="tWk-8Q-xfM" firstAttribute="leading" secondItem="oLc-0l-1vA" secondAttribute="leadingMargin" constant="15" id="qt3-fL-eri"/>
+                            <constraint firstItem="0Fr-0V-hhT" firstAttribute="top" secondItem="tWk-8Q-xfM" secondAttribute="bottom" constant="-1" id="tTf-iX-bCx"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="currentMessageText" destination="0Fr-0V-hhT" id="hdO-og-9TI"/>
+                        <outlet property="replyingToLabel" destination="tWk-8Q-xfM" id="ldN-V7-pMO"/>
                         <segue destination="oq9-1J-qnu" kind="unwind" unwindAction="unwindSegueWithSegue:" id="aKT-ZA-Wf1"/>
                     </connections>
                 </viewController>
@@ -163,6 +185,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aVK-XP-jpc"/>
+        <segue reference="PUK-M8-ytJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,7 +20,9 @@ class MessengerViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "NewMessageIdentifier", sender: nil)
+        }
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {}
@@ -118,6 +120,7 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         let reply =  UITableViewRowAction(style: .normal, title: "Reply") { (action, indexPath) in
             
             self.selectedRow = indexPath.row
+            
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "ReplyIdentifier", sender: nil)
             }
@@ -143,8 +146,6 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messengerCell") as! MessengerTableViewCell
         
         let row = indexPath.row
-        
-        print("\(posts[row].id) \(posts[row].email) \(posts[row].topic)")
         
         cell.senderName.text = posts[row].email
         cell.subject.text =  posts[row].topic
