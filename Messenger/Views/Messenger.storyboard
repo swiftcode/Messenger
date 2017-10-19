@@ -84,6 +84,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yb7-My-WDt">
                             <connections>
                                 <action selector="addButtonPressed:" destination="b9n-St-2fc" id="HDB-u7-M42"/>
+                                <segue destination="UDW-tc-u5p" kind="show" identifier="NewMessageIdentifier" id="PUK-M8-ytJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,17 +92,17 @@
                         <outlet property="addButton" destination="yb7-My-WDt" id="uEV-E0-bmf"/>
                         <outlet property="controllerView" destination="9BW-Wn-Pa1" id="DFg-Cb-RE9"/>
                         <outlet property="menuButton" destination="VyT-oV-JrB" id="FBc-tX-7hW"/>
-                        <segue destination="UDW-tc-u5p" kind="show" identifier="ReplyIdentifier" id="pUe-85-BGP"/>
+                        <segue destination="UDW-tc-u5p" kind="show" identifier="ReplyIdentifier" id="aVK-XP-jpc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gda-4P-sfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1036" y="150.67466266866569"/>
         </scene>
-        <!--Reply View Controller-->
+        <!--Message View Controller-->
         <scene sceneID="9ZW-xs-BzR">
             <objects>
-                <viewController id="UDW-tc-u5p" customClass="ReplyViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UDW-tc-u5p" customClass="MessageViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WY8-0p-Ocd"/>
                         <viewControllerLayoutGuide type="bottom" id="08d-Ci-pZU"/>
@@ -120,19 +121,27 @@
                                     <navigationItem title="Title" id="5Qe-nA-twz"/>
                                 </items>
                             </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Current Message" translatesAutoresizingMaskIntoConstraints="NO" id="0Fr-0V-hhT">
+                                <rect key="frame" x="16" y="114" width="343" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.83970565029999999" green="0.83970565029999999" blue="0.83970565029999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="currentMessageText" destination="0Fr-0V-hhT" id="hdO-og-9TI"/>
                         <segue destination="oq9-1J-qnu" kind="unwind" unwindAction="unwindSegueWithSegue:" id="aKT-ZA-Wf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2m-5E-v0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="oq9-1J-qnu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1953" y="151"/>
+            <point key="canvasLocation" x="1952.8" y="150.67466266866569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gKk-UF-C1I">
@@ -153,4 +162,7 @@
             <point key="canvasLocation" x="96.799999999999997" y="150.67466266866569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aVK-XP-jpc"/>
+    </inferredMetricsTieBreakers>
 </document>

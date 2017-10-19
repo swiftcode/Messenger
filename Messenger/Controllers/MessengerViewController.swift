@@ -16,6 +16,7 @@ class MessengerViewController: UIViewController {
     @IBOutlet weak var controllerView: UIView!
     
     var posts = [Post]()
+    var selectedRow: Int?
     
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -72,6 +73,21 @@ class MessengerViewController: UIViewController {
         setScreenAttributes()
         createPosts()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewMessageIdentifier" {
+            let vc = segue.destination as! MessageViewController
+            vc.screenTitle = "New Message"
+        } else if segue.identifier == "ReplyIdentifier" {
+            let vc = segue.destination as! MessageViewController
+            vc.screenTitle = "Reply"
+            
+            if let selectedRow = self.selectedRow {
+                vc.currentTopic = posts[selectedRow].topic
+                vc.currentMessage = posts[selectedRow].message
+            }
+        }
+    }
 }
 
 extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
@@ -101,6 +117,7 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         
         let reply =  UITableViewRowAction(style: .normal, title: "Reply") { (action, indexPath) in
             
+            self.selectedRow = indexPath.row
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "ReplyIdentifier", sender: nil)
             }
