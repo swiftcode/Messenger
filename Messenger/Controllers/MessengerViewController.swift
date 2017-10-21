@@ -33,7 +33,7 @@ class MessengerViewController: UIViewController {
         addButton.tintColor = .white
         
         //Set the title text
-        self.title = Screen.messagesTitle
+        self.title = ScreenTitle.messages
         
         //Set the controllerView properties
         controllerView.backgroundColor = AppColor.green
@@ -79,10 +79,10 @@ class MessengerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewMessageIdentifier" {
             let vc = segue.destination as! MessageViewController
-            vc.screenTitle = "New Message"
+            vc.screenTitle = ScreenTitle.newMessage
         } else if segue.identifier == "ReplyIdentifier" {
             let vc = segue.destination as! MessageViewController
-            vc.screenTitle = "Reply"
+            vc.screenTitle = ScreenTitle.reply
             
             if let selectedRow = self.selectedRow {
                 vc.currentTopic = posts[selectedRow].topic
