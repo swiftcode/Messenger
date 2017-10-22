@@ -15,6 +15,10 @@ class MessengerViewController: UIViewController {
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var controllerView: UIView!
     
+    //A scrollview that displays latest information, etc
+    @IBOutlet weak var newsScroller: UIScrollView!
+    @IBOutlet weak var newsTextView: UITextView!
+    
     var posts = [Post]()
     var selectedRow: Int?
     
@@ -33,10 +37,13 @@ class MessengerViewController: UIViewController {
         addButton.tintColor = .white
         
         //Set the title text
-        self.title = Screen.messagesTitle
+        self.title = ScreenTitle.posts
         
         //Set the controllerView properties
-        controllerView.backgroundColor = AppColor.green
+        controllerView.backgroundColor = AppColor.cdgPurple
+    
+        //Set the news ticker properties
+        newsTextView.backgroundColor = AppColor.cdgPurple
         
         //Do not have a blank space at top of screen
         self.automaticallyAdjustsScrollViewInsets = false
@@ -79,10 +86,10 @@ class MessengerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewMessageIdentifier" {
             let vc = segue.destination as! MessageViewController
-            vc.screenTitle = "New Message"
+            vc.screenTitle = ScreenTitle.newPosts
         } else if segue.identifier == "ReplyIdentifier" {
             let vc = segue.destination as! MessageViewController
-            vc.screenTitle = "Reply"
+            vc.screenTitle = ScreenTitle.reply
             
             if let selectedRow = self.selectedRow {
                 vc.currentTopic = posts[selectedRow].topic
@@ -126,7 +133,7 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
-        reply.backgroundColor = AppColor.green
+        reply.backgroundColor = AppColor.cdgPurple
         
         return [reply, delete]
     }

@@ -52,9 +52,6 @@ class MessageViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.displayCurrentMessage()
-        }
+        self.displayCurrentMessage()
     }
 }
