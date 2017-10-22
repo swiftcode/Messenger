@@ -44,6 +44,10 @@ class MessengerViewController: UIViewController {
     
         //Set the news ticker properties
         newsTextView.backgroundColor = AppColor.cdgPurple
+        newsTextView.textColor = .white
+        newsTextView.font = UIFont.boldSystemFont(ofSize: 18.0)
+        newsTextView.isEditable = false
+        newsTextView.isSelectable = false
         
         //Do not have a blank space at top of screen
         self.automaticallyAdjustsScrollViewInsets = false
