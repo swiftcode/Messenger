@@ -13,6 +13,8 @@ struct User {
     var user: String
     var db: String
     var roles: [[String : String]] = [[:]]
+    var createdDateTime: Date?
+    var updatedDateTime: Date?
     
     init(userId: String = "", user: String = "", db: String = "") {
         self.userId = userId

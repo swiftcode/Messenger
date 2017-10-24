@@ -16,6 +16,9 @@ struct Post {
     var message: String
     var email: String
     var replyTo: ID?
+    var createdDateTime: Date?
+    var updatedDateTime: Date?
+    
     
     init(id: String = "",
          topic: String = "",
@@ -25,5 +28,7 @@ struct Post {
         self.topic = topic
         self.message = message
         self.email = email
+        self.createdDateTime = Date()
+        self.updatedDateTime = Date()
     }
 }

@@ -12,4 +12,6 @@ struct Ticker {
     var tickerId: ID?
     var postId: ID?
     var nextScheduledNotification: Date?
+    var createdDateTime: Date?
+    var updatedDateTime: Date?
 }
