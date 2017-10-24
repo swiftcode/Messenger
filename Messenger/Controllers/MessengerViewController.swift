@@ -137,7 +137,7 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
-        reply.backgroundColor = AppColor.cdgPurple
+        reply.backgroundColor = AppColor.green
         
         return [reply, delete]
     }
