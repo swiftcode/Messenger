@@ -9,13 +9,13 @@
 import Foundation
 
 struct User {
-    var id: String
+    var userId: ID
     var user: String
     var db: String
     var roles: [[String : String]] = [[:]]
     
-    init(id: String = "", user: String = "", db: String = "") {
-        self.id = id
+    init(userId: String = "", user: String = "", db: String = "") {
+        self.userId = userId
         self.user = user
         self.db = db
     }
