@@ -14,6 +14,7 @@ class MessengerViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var controllerView: UIView!
+    @IBOutlet weak var replyIndicatorView: UIView!
     
     //A scrollview that displays latest information, etc
     @IBOutlet weak var newsScroller: UIScrollView!
@@ -181,6 +182,9 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "messengerCell") as! MessengerTableViewCell
         let row = indexPath.row
+        
+        //If the current post is a reply, change the visual indicator color.
+        cell.replyIndicatorView.backgroundColor = posts[row].replyToId != nil ? UIColor.lightGray : UIColor.clear
         
         cell.senderName.text = posts[row].email
         cell.subject.text =  posts[row].topic

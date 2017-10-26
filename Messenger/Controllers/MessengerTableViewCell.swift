@@ -13,8 +13,7 @@ class MessengerTableViewCell: UITableViewCell {
     @IBOutlet weak var senderName: UILabel!
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var datePosted: UILabel!
-    
-    
+    @IBOutlet weak var replyIndicatorView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
