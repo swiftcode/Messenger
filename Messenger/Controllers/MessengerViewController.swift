@@ -21,6 +21,7 @@ class MessengerViewController: UIViewController {
     
     var posts = [Post]()
     var selectedRow: Int?
+    var selectedReplyToId: ID?
     
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -59,24 +60,27 @@ class MessengerViewController: UIViewController {
         var topic = "5K run this weekend"
         var message = "There is a 5K run this weekend at Brookstone Park"
         var email = "jsmith@nowhere.com"
+        let testReplyId = id
         
-        var post = Post(id: id, topic: topic, message: message, email: email)
+        var post = Post(id: id, topic: topic, message: message, email: email, replyToId: nil)
         posts.append(post)
         
         id = String.idCode()
         topic = "Snow predicted"
         message = "A snow storm is predicted for parts of the east coast"
         email = "newscaster@news.com"
-        post = Post(id: id, topic: topic, message: message, email: email)
+        post = Post(id: id, topic: topic, message: message, email: email, replyToId: nil)
+        
         posts.append(post)
         
         id = String.idCode()
         topic = "5K run this weekend"
         message = "Sounds great.  I'll be there."
         email = "runningman@running.com"
-        post = Post(id: id, topic: topic, message: message, email: email)
-        posts.append(post)
         
+        post = Post(id: id, topic: topic, message: message, email: email, replyToId: testReplyId)
+        posts.append(post)
+
         posts.sort { ($0.topic) < ($1.topic) }
     }
     
@@ -152,11 +156,36 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         return posts.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedReplyToId = posts[indexPath.row].id
+        print("selectedReplyToId = \(String(describing: selectedReplyToId!))")
+        tableView.reloadData()
+    }
+
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        self.selectedReplyToId = nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if selectedReplyToId != nil &&
+           posts[indexPath.row].replyToId == selectedReplyToId {
+            return 70
+        } else if posts[indexPath.row].replyToId != nil {
+            return 0
+        } else {
+            return 70
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "messengerCell") as! MessengerTableViewCell
         
+        print("posts.count =====> \(posts.count)")
         let row = indexPath.row
+        
+        print("\n\(posts[row].id) \(posts[row].message)\n")
         
         cell.senderName.text = posts[row].email
         cell.subject.text =  posts[row].topic

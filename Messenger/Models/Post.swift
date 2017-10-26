@@ -15,7 +15,7 @@ struct Post {
     var topic: String
     var message: String
     var email: String
-    var replyTo: ID?
+    var replyToId: ID?
     var createdDateTime: Date?
     var updatedDateTime: Date?
     
@@ -23,11 +23,17 @@ struct Post {
     init(id: String = "",
          topic: String = "",
          message: String = "",
-         email: String = "") {
+         email: String = "",
+         replyToId: ID? = nil) {
         self.id = id
         self.topic = topic
         self.message = message
         self.email = email
+        
+        if let replyToId = replyToId {
+            self.replyToId = replyToId
+        }
+        
         self.createdDateTime = Date()
         self.updatedDateTime = Date()
     }
