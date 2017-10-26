@@ -158,7 +158,6 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedReplyToId = posts[indexPath.row].id
-        print("selectedReplyToId = \(String(describing: selectedReplyToId!))")
         tableView.reloadData()
     }
 
@@ -181,11 +180,7 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "messengerCell") as! MessengerTableViewCell
-        
-        print("posts.count =====> \(posts.count)")
         let row = indexPath.row
-        
-        print("\n\(posts[row].id) \(posts[row].message)\n")
         
         cell.senderName.text = posts[row].email
         cell.subject.text =  posts[row].topic
