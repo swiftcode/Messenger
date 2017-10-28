@@ -18,8 +18,7 @@ struct Post {
     var replyToId: ID?
     var createdDateTime: Date?
     var updatedDateTime: Date?
-    var replyCount: [ID : Int] = [ : ]
-    
+    var replyCount: Int = 0
     
     init(id: String = "",
          topic: String = "",
@@ -30,7 +29,6 @@ struct Post {
         self.topic = topic
         self.message = message
         self.email = email
-        self.replyCount = [ : ]
         
         if let replyToId = replyToId {
             self.replyToId = replyToId
@@ -41,18 +39,4 @@ struct Post {
     }
 }
 
-extension Post {
-    mutating func incrementPostCount(id: ID) {
-        if let count = replyCount[id] {
-            let newCount = count + 1
-            self.replyCount[id] = newCount
-        }
-    }
-    
-    mutating func decrementPostCount(id: ID) {
-        if let count = replyCount[id] {
-            let newCount = count - 1
-            self.replyCount[id] = newCount
-        }
-    }
-}
+

@@ -19,6 +19,7 @@ func createPosts() -> [Post] {
     let testReplyId = id
     
     post = Post(id: id, topic: topic, message: message, email: email, replyToId: nil)
+    post.replyCount = 2
     posts.append(post)
     
     id = String.idCode()
@@ -26,6 +27,8 @@ func createPosts() -> [Post] {
     message = "A snow storm is predicted for parts of the east coast"
     email = "newscaster@news.com"
     post = Post(id: id, topic: topic, message: message, email: email, replyToId: nil)
+    post.replyCount = 1
+    let snowReplyId = id
     
     posts.append(post)
     
@@ -37,6 +40,32 @@ func createPosts() -> [Post] {
     post = Post(id: id, topic: topic, message: message, email: email, replyToId: testReplyId)
     posts.append(post)
     
+    id = String.idCode()
+    topic = "Favorite recipe"
+    message = "Here's a great recipe."
+    email = "foodie@foodnetwork.com"
+    
+    post = Post(id: id, topic: topic, message: message, email: email, replyToId: nil)
+    posts.append(post)
+    
+    
+    id = String.idCode()
+    topic = "5K run this weekend"
+    message = "I'll be there too."
+    email = "lurlene@running.com"
+    
+    post = Post(id: id, topic: topic, message: message, email: email, replyToId: testReplyId)
+    posts.append(post)
+    
+    id = String.idCode()
+    topic = "Snow predicted"
+    message = "That doesn't sound good."
+    email = "ednakrabappel@someplace.com"
+    
+    post = Post(id: id, topic: topic, message: message, email: email, replyToId: snowReplyId)
+    posts.append(post)
+    
+    //For now sort by title.  Later, sort date submitted + title
     posts.sort { ($0.topic) < ($1.topic) }
     
     return posts

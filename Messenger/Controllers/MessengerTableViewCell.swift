@@ -13,12 +13,17 @@ class MessengerTableViewCell: UITableViewCell {
     @IBOutlet weak var senderName: UILabel!
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var datePosted: UILabel!
-    @IBOutlet weak var replyIndicatorView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let margin: CGFloat = 30.0
+        let indentPoints = CGFloat(self.indentationLevel) * self.indentationWidth
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

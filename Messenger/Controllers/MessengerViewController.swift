@@ -22,10 +22,6 @@ class MessengerViewController: UIViewController {
     var selectedRow: Int?
     var selectedReplyToId: ID?
     
-    //Keep track of how many replies each posting has.
-    var replyCount: [ID : Int]?
-    
-    
     
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -120,8 +116,15 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         return [reply, delete]
     }
     
-    
     //MARK: - Tableview delegates
+    func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
+        if posts[indexPath.row].replyToId != nil {
+            return 1
+        } else {
+            return 0
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -155,8 +158,18 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messengerCell") as! MessengerTableViewCell
         let row = indexPath.row
         
-        //If the current post is a reply, change the visual indicator color.
-        cell.replyIndicatorView.backgroundColor = posts[row].replyToId != nil ? UIColor.lightGray : UIColor.clear
+        if posts[row].replyCount > 0 {
+            cell.accessoryType = .disclosureIndicator
+        }
+        
+        if posts[row].replyToId != nil {
+            let replyColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 232 / 255, alpha: 1.0)
+            cell.backgroundColor = replyColor
+            cell.senderName.backgroundColor = .clear
+            cell.subject.backgroundColor = .clear
+            cell.datePosted.backgroundColor = .clear
+        }
+        
         
         cell.senderName.text = posts[row].email
         cell.subject.text =  posts[row].topic
