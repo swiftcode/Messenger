@@ -9,12 +9,10 @@
 import UIKit
 
 class MessengerViewController: UIViewController {
-
     //MARK: - IBOutlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var controllerView: UIView!
-    @IBOutlet weak var replyIndicatorView: UIView!
     
     //A scrollview that displays latest information, etc
     @IBOutlet weak var newsScroller: UIScrollView!
@@ -23,6 +21,11 @@ class MessengerViewController: UIViewController {
     var posts = [Post]()
     var selectedRow: Int?
     var selectedReplyToId: ID?
+    
+    //Keep track of how many replies each posting has.
+    var replyCount: [ID : Int]?
+    
+    
     
     //MARK: - IBActions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -55,41 +58,11 @@ class MessengerViewController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
     }
     
-    
-    private func createPosts() {
-        var id = String.idCode()
-        var topic = "5K run this weekend"
-        var message = "There is a 5K run this weekend at Brookstone Park"
-        var email = "jsmith@nowhere.com"
-        let testReplyId = id
-        
-        var post = Post(id: id, topic: topic, message: message, email: email, replyToId: nil)
-        posts.append(post)
-        
-        id = String.idCode()
-        topic = "Snow predicted"
-        message = "A snow storm is predicted for parts of the east coast"
-        email = "newscaster@news.com"
-        post = Post(id: id, topic: topic, message: message, email: email, replyToId: nil)
-        
-        posts.append(post)
-        
-        id = String.idCode()
-        topic = "5K run this weekend"
-        message = "Sounds great.  I'll be there."
-        email = "runningman@running.com"
-        
-        post = Post(id: id, topic: topic, message: message, email: email, replyToId: testReplyId)
-        posts.append(post)
-
-        posts.sort { ($0.topic) < ($1.topic) }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setScreenAttributes()
-        createPosts()
+        posts = createPosts()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -158,16 +131,15 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedReplyToId = posts[indexPath.row].id
+        selectedReplyToId = posts[indexPath.row].id
         tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-        self.selectedReplyToId = nil
+        selectedReplyToId = nil
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         if selectedReplyToId != nil &&
            posts[indexPath.row].replyToId == selectedReplyToId {
             return 70
