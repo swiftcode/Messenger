@@ -12,6 +12,7 @@ class MessengerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var senderName: UILabel!
     @IBOutlet weak var subject: UILabel!
+    @IBOutlet weak var postBody: UITextView!
     @IBOutlet weak var datePosted: UILabel!
     
     override func awakeFromNib() {
@@ -28,8 +29,5 @@ class MessengerTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

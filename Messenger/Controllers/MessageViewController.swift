@@ -18,7 +18,7 @@ class MessageViewController: UIViewController, UIImagePickerControllerDelegate {
     //For camera capture
     var captureSession: AVCaptureSession?
     
-    @IBOutlet var currentMessageText: UITextView!
+    @IBOutlet weak var currentMessageText: UITextView!
     @IBOutlet weak var replyingToLabel: UILabel!
     @IBOutlet weak var cameraButton: UIButton!
     

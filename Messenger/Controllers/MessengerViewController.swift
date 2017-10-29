@@ -170,7 +170,6 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
             cell.datePosted.backgroundColor = .clear
         }
         
-        
         cell.senderName.text = posts[row].email
         cell.subject.text =  posts[row].topic
         cell.datePosted.text = Date().microDate + " " + Date().shortTime
