@@ -18,11 +18,13 @@ class MessengerTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    /***
     override func layoutSubviews() {
         super.layoutSubviews()
         let margin: CGFloat = 30.0
         let indentPoints = CGFloat(self.indentationLevel) * self.indentationWidth
     }
+    ***/
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

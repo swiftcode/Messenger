@@ -7,15 +7,32 @@
 //
 
 import UIKit
+import AVFoundation
 
-class MessageViewController: UIViewController {
+class MessageViewController: UIViewController, UIImagePickerControllerDelegate {
 
     var screenTitle: String?
     var currentTopic: String?
     var currentMessage: String?
     
+    //For camera capture
+    var captureSession: AVCaptureSession?
+    
     @IBOutlet var currentMessageText: UITextView!
     @IBOutlet weak var replyingToLabel: UILabel!
+    @IBOutlet weak var cameraButton: UIButton!
+    
+    @IBAction func cameraButtonPressed(sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = (self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+            imagePicker.sourceType = .camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    
     
     func displayCurrentMessage() {
         self.title = screenTitle ?? ""
@@ -51,6 +68,10 @@ class MessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        cameraButton.setImage(UIImage(named: "camera2.png"), for: .normal)
+        cameraButton.layer.cornerRadius = cameraButton.frame.height * 0.5
+        cameraButton.clipsToBounds = true
+        
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.displayCurrentMessage()
     }

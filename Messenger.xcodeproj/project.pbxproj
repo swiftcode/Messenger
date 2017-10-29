@@ -19,6 +19,7 @@
 		E56776BE1F93DCEF00ECDAA9 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776BD1F93DCEF00ECDAA9 /* MessengerViewController.swift */; };
 		E56776C01F94149A00ECDAA9 /* MessengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */; };
 		E56776C31F94663F00ECDAA9 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56776C21F94663F00ECDAA9 /* DateExtensions.swift */; };
+		E578A57D1FA54B54007F2936 /* camera2.png in Resources */ = {isa = PBXBuildFile; fileRef = E578A57C1FA54B53007F2936 /* camera2.png */; };
 		E5A47E281FA43093003418C9 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A47E271FA43093003418C9 /* TestData.swift */; };
 		E5A80D4A1F9ED46500FA98DE /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A80D491F9ED46500FA98DE /* Ticker.swift */; };
 		E5A80D4C1F9EEE9B00FA98DE /* DateTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A80D4B1F9EEE9B00FA98DE /* DateTimeProtocol.swift */; };
@@ -63,6 +64,7 @@
 		E56776BD1F93DCEF00ECDAA9 /* MessengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessengerViewController.swift; path = Controllers/MessengerViewController.swift; sourceTree = "<group>"; };
 		E56776BF1F94149A00ECDAA9 /* MessengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessengerTableViewCell.swift; path = Controllers/MessengerTableViewCell.swift; sourceTree = "<group>"; };
 		E56776C21F94663F00ECDAA9 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Extensions/DateExtensions.swift; sourceTree = "<group>"; };
+		E578A57C1FA54B53007F2936 /* camera2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera2.png; path = Assets/camera2.png; sourceTree = "<group>"; };
 		E5A47E271FA43093003418C9 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestData.swift; path = TestData/TestData.swift; sourceTree = "<group>"; };
 		E5A80D491F9ED46500FA98DE /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = Models/Ticker.swift; sourceTree = "<group>"; };
 		E5A80D4B1F9EEE9B00FA98DE /* DateTimeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeProtocol.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				E56776851F93D83B00ECDAA9 /* Messenger */,
 				E56776B41F93D9D000ECDAA9 /* Resources */,
+				E578A5731FA541D9007F2936 /* Assets */,
 				E567769A1F93D83B00ECDAA9 /* MessengerTests */,
 				E56776A51F93D83B00ECDAA9 /* MessengerUITests */,
 				E56776841F93D83B00ECDAA9 /* Products */,
@@ -205,6 +208,15 @@
 				E5E7ED8E1F97050500A77F96 /* StringExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E578A5731FA541D9007F2936 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E578A57C1FA54B53007F2936 /* camera2.png */,
+			);
+			name = Assets;
+			path = Messenger;
 			sourceTree = "<group>";
 		};
 		E5A47E261FA43034003418C9 /* TestData */ = {
@@ -345,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E56776B91F93DB3500ECDAA9 /* Messenger.storyboard in Resources */,
+				E578A57D1FA54B54007F2936 /* camera2.png in Resources */,
 				E56776911F93D83B00ECDAA9 /* LaunchScreen.storyboard in Resources */,
 				E567768E1F93D83B00ECDAA9 /* Assets.xcassets in Resources */,
 			);
