@@ -140,16 +140,17 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         selectedReplyToId = nil
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if selectedReplyToId != nil &&
            posts[indexPath.row].replyToId == selectedReplyToId {
-            return 70
+            return 233
         } else if posts[indexPath.row].replyToId != nil {
             return 0
         } else {
-            return 70
+            return 233
         }
     }
     
@@ -167,11 +168,16 @@ extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
             cell.backgroundColor = replyColor
             cell.senderName.backgroundColor = .clear
             cell.subject.backgroundColor = .clear
+            cell.postBody.backgroundColor = .clear
             cell.datePosted.backgroundColor = .clear
+        } else {
+            cell.backgroundColor = .white
         }
         
         cell.senderName.text = posts[row].email
-        cell.subject.text =  posts[row].topic
+        
+        let topic = posts[row].replyToId != nil ? "Re: \(posts[row].topic)"  : posts[row].topic
+        cell.subject.text =  topic
         cell.datePosted.text = Date().microDate + " " + Date().shortTime
 
         return cell

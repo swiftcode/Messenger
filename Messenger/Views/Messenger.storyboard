@@ -72,11 +72,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-gU-rGa">
-                                                    <rect key="frame" x="26" y="8" width="210" height="29"/>
+                                                    <rect key="frame" x="26" y="8" width="341" height="29"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="hbt-aT-Gaw"/>
-                                                        <constraint firstAttribute="width" constant="210" id="mVs-qe-xA3"/>
+                                                        <constraint firstAttribute="width" constant="341" id="mVs-qe-xA3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.24891149997711182" green="0.59883171319961548" blue="0.61518239974975586" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,12 +103,12 @@
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBo-hc-X3k">
-                                                    <rect key="frame" x="26" y="75" width="341" height="128"/>
+                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBo-hc-X3k">
+                                                    <rect key="frame" x="26" y="75" width="309" height="128"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="DRX-hJ-7ei"/>
-                                                        <constraint firstAttribute="width" constant="341" id="ZzI-8C-mDw"/>
+                                                        <constraint firstAttribute="width" constant="309" id="ZzI-8C-mDw"/>
                                                     </constraints>
                                                     <string key="text">Bacon ipsum dolor amet meatball drumstick pork tail, ground round cupim kielbasa porchetta meatloaf ribeye flank. Doner rump jowl, strip steak t-bone pork pastrami. Flank leberkas doner corned beef, bacon cupim rump ground round beef ribs chuck. Shank short loin strip steak beef ribs rump chuck.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
