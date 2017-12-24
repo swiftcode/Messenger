@@ -8,6 +8,17 @@
 
 import UIKit
 
+protocol PostDataProtocol {
+    func getAll() -> [Post]
+}
+
+class PostData: PostDataProtocol {
+    func getAll() -> [Post] {
+        let testData = createPosts()
+        return testData
+    }
+}
+
 class MessengerViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -18,7 +29,8 @@ class MessengerViewController: UIViewController {
     @IBOutlet weak var newsScroller: UIScrollView!
     @IBOutlet weak var newsTextView: UITextView!
     
-    var posts = [Post]()
+    let postData = PostData()
+    var posts: [Post] = [] 
     var selectedRow: Int?
     var selectedReplyToId: ID?
     
